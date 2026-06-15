@@ -1,0 +1,10 @@
+# Logs e arquivos locais do editor
+.system_generated/
+.tempmediaStorage/
+*.log
+
+# Pastas de build / deploy
+.vercel/
+node_modules/
+dist/
+build/

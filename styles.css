@@ -160,9 +160,15 @@ header.scrolled {
   font-weight: 500;
 }
 
-.logo-swirl-svg {
-  height: 40px;
+.logo-swirl-img {
+  height: 32px;
   width: auto;
+  object-fit: contain;
+  transition: var(--transition-smooth);
+}
+
+.logo:hover .logo-swirl-img {
+  transform: rotate(5deg) scale(1.05);
 }
 
 nav ul {

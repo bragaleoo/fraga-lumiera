@@ -246,7 +246,7 @@ nav a:hover::after {
   justify-content: center;
   text-align: center;
   padding-top: 100px;
-  background-image: url('assets/products/hero_bg.jpg');
+  background-image: url('assets/products/hero_bg.png');
   background-size: cover;
   background-position: center;
   overflow: hidden;

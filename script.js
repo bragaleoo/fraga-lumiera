@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateLookbookSlides() {
-    totalPages = activeCatalog === 'home_care' ? 7 : 11;
+    totalPages = activeCatalog === 'home_care' ? 7 : 12;
     if (pagTotal) pagTotal.textContent = totalPages;
 
     if (lookbookSlider) {

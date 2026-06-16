@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Catalog Filtering System (SEO-friendly HTML toggle)
   const tabBtns = document.querySelectorAll('.tab-btn');
   const productsGrid = document.querySelector('.products-grid');
-  const lookbookContainer = document.querySelector('.lookbook-container');
   const productCards = document.querySelectorAll('.product-card');
 
   // Set initial default tab view (Linha Home Care is default)
@@ -58,111 +57,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function filterCatalog(filter) {
-    if (filter === 'lookbook') {
-      // Hide product grid and show lookbook slider
-      productsGrid.style.display = 'none';
-      lookbookContainer.classList.add('active');
-    } else {
-      // Show product grid and hide lookbook slider
-      productsGrid.style.display = 'grid';
-      lookbookContainer.classList.remove('active');
-      
-      // Filter cards by class
-      productCards.forEach(card => {
-        if (card.classList.contains(`${filter}-product`)) {
-          card.style.display = 'flex';
-          // Trigger a quick layout redraw and fade-in animation
-          card.style.opacity = '0';
-          card.style.transform = 'translateY(10px)';
-          setTimeout(() => {
-            card.style.transition = 'var(--transition-smooth)';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-          }, 50);
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  }
-
-  // Lookbook Slider Interaction
-  const lookbookSlider = document.querySelector('.lookbook-slider');
-  const slides = document.querySelectorAll('.lookbook-slide');
-  const prevBtn = document.querySelector('.lookbook-arrow.prev');
-  const nextBtn = document.querySelector('.lookbook-arrow.next');
-  const pagCurrent = document.querySelector('.lookbook-page-current');
-  const pagTotal = document.querySelector('.lookbook-page-total');
-  const lookbookTabBtns = document.querySelectorAll('.lookbook-tab-btn');
-
-  let currentSlide = 0;
-  let activeCatalog = 'home_care'; // home_care or professional
-  let totalPages = 7;
-  
-  if (pagTotal) pagTotal.textContent = totalPages;
-
-  // Render initial lookbook state based on active catalog
-  updateLookbookSlides();
-
-  lookbookTabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      lookbookTabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activeCatalog = btn.getAttribute('data-catalog');
-      currentSlide = 0;
-      updateLookbookSlides();
-    });
-  });
-
-  if (prevBtn && nextBtn && lookbookSlider) {
-    nextBtn.addEventListener('click', () => {
-      if (currentSlide < totalPages - 1) {
-        currentSlide++;
-        slideLookbook();
+    productsGrid.style.display = 'grid';
+    
+    // Filter cards by class
+    productCards.forEach(card => {
+      if (card.classList.contains(`${filter}-product`)) {
+        card.style.display = 'flex';
+        // Trigger a quick layout redraw and fade-in animation
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(10px)';
+        setTimeout(() => {
+          card.style.transition = 'var(--transition-smooth)';
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, 50);
       } else {
-        currentSlide = 0; // Wrap around
-        slideLookbook();
+        card.style.display = 'none';
       }
     });
-
-    prevBtn.addEventListener('click', () => {
-      if (currentSlide > 0) {
-        currentSlide--;
-        slideLookbook();
-      } else {
-        currentSlide = totalPages - 1; // Wrap around
-        slideLookbook();
-      }
-    });
-  }
-
-  function updateLookbookSlides() {
-    totalPages = activeCatalog === 'home_care' ? 7 : 12;
-    if (pagTotal) pagTotal.textContent = totalPages;
-
-    if (lookbookSlider) {
-      lookbookSlider.innerHTML = '';
-      for (let i = 1; i <= totalPages; i++) {
-        const slide = document.createElement('div');
-        slide.classList.add('lookbook-slide');
-        
-        const img = document.createElement('img');
-        img.src = `assets/pages/${activeCatalog}_page_${i}.jpg`;
-        img.alt = `Catálogo ${activeCatalog === 'home_care' ? 'Home Care' : 'Profissional'} - Página ${i}`;
-        
-        slide.appendChild(img);
-        lookbookSlider.appendChild(slide);
-      }
-    }
-    currentSlide = 0;
-    slideLookbook();
-  }
-
-  function slideLookbook() {
-    if (lookbookSlider) {
-      lookbookSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
-      if (pagCurrent) pagCurrent.textContent = currentSlide + 1;
-    }
   }
 
   // WhatsApp Order Pre-filled Message Generator

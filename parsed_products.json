@@ -82,10 +82,10 @@
   },
   {
     "line": "professional",
-    "image": "assets/products/progressiva-1l.png",
+    "image": "assets/products/kit-therapy-prof.png",
     "id": "Produto 01",
-    "title": "Progressiva 1L",
-    "description": "Alinhamento profissional com efeito disciplinante, brilho e controle do volume.",
+    "title": "Kit Therapy Home Care",
+    "description": "Cuidado completo para hidratação, nutrição e recuperação dos fios no dia a dia.",
     "cash_price": "R$ 249,90",
     "installment_price": "5x de R$ 57,00"
   },
@@ -109,10 +109,10 @@
   },
   {
     "line": "professional",
-    "image": "assets/products/kit-therapy-prof.png",
+    "image": "assets/products/progressiva-1l.png",
     "id": "Produto 04",
-    "title": "Kit Therapy Home Care",
-    "description": "Cuidado completo para hidratação, nutrição e recuperação dos fios no dia a dia.",
+    "title": "Progressiva 1L",
+    "description": "Alinhamento profissional com efeito disciplinante, brilho e controle do volume.",
     "cash_price": "R$ 249,90",
     "installment_price": "5x de R$ 57,00"
   },
@@ -145,12 +145,12 @@
   },
   {
     "line": "professional",
-    "image": "assets/products/cauterizacao.png",
+    "image": "assets/products/serum.png",
     "id": "Produto 08",
-    "title": "Cauterização",
-    "description": "Sistema profissional em três passos para reconstrução, proteção e brilho.",
-    "cash_price": "R$ 289,90",
-    "installment_price": "5x de R$ 66,00"
+    "title": "Serum 60ml",
+    "description": "Serum extrafino finalizador e doador de brilho tridimensional, perfeito para proteção e selamento das cutículas.",
+    "cash_price": "R$ 109,90",
+    "installment_price": "5x de R$ 26,98"
   },
   {
     "line": "professional",
@@ -244,11 +244,11 @@
   },
   {
     "line": "professional",
-    "image": "assets/products/serum.png",
+    "image": "assets/products/cauterizacao.png",
     "id": "Produto 19",
-    "title": "Serum 60ml",
-    "description": "Serum extrafino finalizador e doador de brilho tridimensional, perfeito para proteção e selamento das cutículas.",
-    "cash_price": "R$ 109,90",
-    "installment_price": "5x de R$ 26,98"
+    "title": "Cauterização",
+    "description": "Sistema profissional em três passos para reconstrução, proteção e brilho.",
+    "cash_price": "R$ 289,90",
+    "installment_price": "5x de R$ 66,00"
   }
 ]

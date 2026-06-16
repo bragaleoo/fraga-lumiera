@@ -229,12 +229,20 @@ def generate_pdf(line_type, output_pdf_name):
             # Centered Product (single product on page)
             render_product_card(draw, page_img, page_prods[0], 369, 420, 502, is_prof)
             
-        # 4. Professional OBS note
+        # 4. OBS note / Purchase Conditions
+        obs_lines = []
         if is_prof:
-            obs_text = "* O valor apresentado na Linha Profissional é válido para compras a partir de 2 unidades."
-            obs_bbox = f_obs_note.getbbox(obs_text)
+            obs_lines.append("* O valor apresentado na Linha Profissional é válido para compras a partir de 2 unidades.")
+        
+        obs_lines.append("* Condições: 5% de desconto no Pix • Parcelamento em 3x a partir de R$ 99,00 ou 5x a partir de R$ 199,00.")
+        
+        curr_obs_y = 1530 if len(obs_lines) == 2 else 1560
+        for obs_line in obs_lines:
+            obs_bbox = f_obs_note.getbbox(obs_line)
             obs_w = obs_bbox[2] - obs_bbox[0]
-            draw.text(((canvas_w - obs_w) // 2, 1560), obs_text, fill=GOLD_COLOR, font=f_obs_note)
+            draw.text(((canvas_w - obs_w) // 2, curr_obs_y), obs_line, fill=GOLD_COLOR, font=f_obs_note)
+            curr_obs_y += 30
+            
             
         # 5. Footer Logo
         logo_text = "FL"

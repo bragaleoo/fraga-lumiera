@@ -135,37 +135,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Intersection Observer for scroll-reveal micro-animations
-  const sections = document.querySelectorAll('section');
-  const animOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('section-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, animOptions);
-
-  // Set animation classes
-  sections.forEach(sec => {
-    sec.style.opacity = '0';
-    sec.style.transform = 'translateY(25px)';
-    sec.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(sec);
-  });
-
-  // Custom CSS style insert for section reveal
-  const styleSheet = document.createElement("style");
-  styleSheet.innerText = `
-    .section-visible {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-    }
-  `;
-  document.head.appendChild(styleSheet);
 });

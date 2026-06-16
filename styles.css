@@ -50,6 +50,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px; /* Prevent fixed header from overlapping anchor content */
   font-size: 16px;
   background-color: var(--bg-dark);
   color: var(--text-primary);
@@ -993,5 +994,30 @@ footer {
   .tab-btn {
     font-size: 0.8rem;
     padding: var(--space-xs) var(--space-sm);
+  }
+}
+
+/* Mobile Optimization adjustments for small screens */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--space-sm); /* 12px instead of 24px for better screen utilization */
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr; /* Force single column to prevent card overflow */
+    gap: var(--space-md);
+  }
+  
+  .catalog-download-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+    padding: 0 var(--space-sm);
+  }
+  
+  .catalog-download-wrapper a {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px; /* Taller touch targets */
   }
 }

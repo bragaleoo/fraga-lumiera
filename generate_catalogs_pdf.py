@@ -122,42 +122,39 @@ def render_product_card(draw, page_img, prod, x, y, width, is_professional):
     draw.text((x, price_y), "À VISTA", fill=GOLD_COLOR, font=f_price_lbl)
     draw.text((x, price_y + 50), prod["cash_price"], fill=WHITE_COLOR, font=f_price_val)
     
+    # Determine the installment count
+    inst_count = 10 if (is_professional and ("Botox" in prod["title"] or "Progressiva" in prod["title"])) else 5
+    inst_label = f"{inst_count:02d}X"
+    
     # Right price (05x or 10x installment)
     # Check if we have an installment price
     inst_price = prod["installment_price"]
-    if not inst_price:
-        # Generate installment dynamically if empty (5x of original cash + ~13% markup aligned with catalog rates)
+    if not inst_price or "de R$" not in inst_price:
+        # Generate installment dynamically if empty or not formatted correctly
         try:
             val = float(prod["cash_price"].replace("R$", "").replace(".", "").replace(",", ".").strip())
             # Select proper markup
             if is_professional:
-                # Professional uses 5x with standard rates (around 1.48x total or 1.5x)
-                # BB Cream Prof: 149.90 à vista vs 224.90 parcelado
-                # Progressiva: 249.90 à vista vs 285.00 parcelado
-                # Serum: 109.90 à vista vs 134.90 parcelado
-                # Kit Nano: 229.90 à vista vs 339.90 parcelado
-                # Let's map directly from parsed data, or if missing calculate:
-                inst_val = val * 1.48
+                inst_val = val * 1.48 if inst_count == 5 else val * 1.14
             else:
-                # Home Care uses 5x (119.90 -> 141.90, 289.90 -> 328.90, 149.90 -> 174.90, 129.90 -> 154.90)
-                # Markup is around 1.18x
                 inst_val = val * 1.18
             
-            # Format price
-            inst_price = f"R$ {inst_val:.2f}".replace(".", ",")
+            installment_val = inst_val / inst_count
+            inst_price = f"{inst_count}x de R$ {installment_val:.2f}".replace(".", ",")
         except Exception:
-            inst_price = "R$ --"
+            inst_price = f"{inst_count}x de R$ --"
             
-    inst_label = "05X"
-    # Some professional products have specific labels, e.g. 10x or 5x.
-    # In the original catalog page 3, Progressiva 1L shows 10x (249,90 à vista, 285,00 10x).
-    # We will use 5x as the default, but check if the product title matches Botox or Progressiva
-    if is_professional and ("Botox" in prod["title"] or "Progressiva" in prod["title"]):
-         inst_label = "10X"
-         
-    right_x = x + width - 180
-    draw.text((right_x, price_y), inst_label, fill=GOLD_COLOR, font=f_price_lbl)
-    draw.text((right_x, price_y + 50), inst_price, fill=WHITE_COLOR, font=f_price_val)
+    # Right-align the installment label and value to prevent overflow
+    label_bbox = f_price_lbl.getbbox(inst_label)
+    label_w = label_bbox[2] - label_bbox[0]
+    label_x = x + width - label_w
+    
+    price_bbox = f_price_val.getbbox(inst_price)
+    price_w = price_bbox[2] - price_bbox[0]
+    price_x = x + width - price_w
+    
+    draw.text((label_x, price_y), inst_label, fill=GOLD_COLOR, font=f_price_lbl)
+    draw.text((price_x, price_y + 50), inst_price, fill=WHITE_COLOR, font=f_price_val)
 
 def generate_pdf(line_type, output_pdf_name):
     print(f"\nGenerating catalog for {line_type}...")

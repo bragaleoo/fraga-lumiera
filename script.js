@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterCatalog(filter) {
     productsGrid.style.display = 'grid';
     
+    // Toggle professional OBS note
+    const obsNote = document.querySelector('.professional-obs-note');
+    if (obsNote) {
+      obsNote.style.display = filter === 'professional' ? 'block' : 'none';
+    }
+    
     // Filter cards by class
     productCards.forEach(card => {
       if (card.classList.contains(`${filter}-product`)) {

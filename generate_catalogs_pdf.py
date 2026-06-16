@@ -123,8 +123,8 @@ def render_product_card(draw, page_img, prod, x, y, width, is_professional):
     draw.text((x, price_y + 50), prod["cash_price"], fill=WHITE_COLOR, font=f_price_val)
     
     # Determine the installment count
-    inst_count = 10 if (is_professional and ("Botox" in prod["title"] or "Progressiva" in prod["title"])) else 5
-    inst_label = f"{inst_count:02d}X"
+    inst_count = 5
+    inst_label = "05X"
     
     # Right price (05x or 10x installment)
     # Check if we have an installment price

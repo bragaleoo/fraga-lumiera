@@ -1,0 +1,254 @@
+[
+  {
+    "line": "home-care",
+    "image": "assets/products/reparador.png",
+    "id": "Produto 01",
+    "title": "Reparador",
+    "description": "Finalização leve com brilho espelhado, toque sedoso e controle absoluto do frizz e pontas duplas.",
+    "cash_price": "R$ 64,90",
+    "installment_price": "5x de R$ 16,38"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/serum.png",
+    "id": "Produto 02",
+    "title": "Serum 60ml",
+    "description": "Serum extrafino finalizador e doador de brilho tridimensional, perfeito para proteção e selamento das cutículas.",
+    "cash_price": "R$ 129,90",
+    "installment_price": "5x de R$ 30,98"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/bb-cream.png",
+    "id": "Produto 03",
+    "title": "BB Cream 200ml",
+    "description": "Selagem térmica, maciez incomparável, proteção contra altas temperaturas e brilho absoluto para finalizar sua rotina.",
+    "cash_price": "R$ 149,90",
+    "installment_price": "5x de R$ 34,98"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/perfume-capilar.png",
+    "id": "Produto 04",
+    "title": "Perfume Capilar",
+    "description": "Perfuma os cabelos com elegância, proporcionando um toque sofisticado e uma deliciosa sensação de frescor por muito mais tempo.",
+    "cash_price": "R$ 119,90",
+    "installment_price": "5x de R$ 28,38"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/kit-therapy.png",
+    "id": "Produto 05",
+    "title": "Kit Therapy Home Care",
+    "description": "Cuidado capilar completo para hidratação, nutrição profunda e recuperação intensa da fibra no conforto do seu dia a dia.",
+    "cash_price": "R$ 289,90",
+    "installment_price": "5x de R$ 65,78"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/cachos-day-ester.png",
+    "id": "Produto 06",
+    "title": "Cachos Deslumbrantes",
+    "description": "Kit completo desenvolvido para definição de alta performance, hidratação duradoura e nutrição poderosa dos fios cacheados.",
+    "cash_price": "R$ 219,90",
+    "installment_price": "5x de R$ 50,38"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/desmaia-fios.png",
+    "id": "Produto 07",
+    "title": "Desmaia Fios",
+    "description": "Ação ultra disciplinante, maciez instantânea profunda e redução do volume indesejado dos cabelos.",
+    "cash_price": "R$ 239,90",
+    "installment_price": "5x de R$ 54,78"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/golden-horse.png",
+    "id": "Produto 08",
+    "title": "Golden Horse",
+    "description": "Nutrição poderosa e fortificante para estimular o crescimento saudável e revitalizar os fios de dentro para fora.",
+    "cash_price": "R$ 239,90",
+    "installment_price": "5x de R$ 54,78"
+  },
+  {
+    "line": "home-care",
+    "image": "assets/products/whey-protein.png",
+    "id": "Produto 09",
+    "title": "Máscara Whey Protein",
+    "description": "Tratamento de nutrição intensa para reconstrução da fibra, força imediata, hidratação máxima e sedosidade.",
+    "cash_price": "R$ 249,90",
+    "installment_price": "5x de R$ 63,98"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/progressiva-1l.png",
+    "id": "Produto 01",
+    "title": "Progressiva 1L",
+    "description": "Alinhamento profissional com efeito disciplinante, brilho e controle do volume.",
+    "cash_price": "R$ 249,90",
+    "installment_price": "5x de R$ 57,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/botox.png",
+    "id": "Produto 02",
+    "title": "Botox",
+    "description": "Tratamento reparador para fios alinhados, macios e com aparência renovada.",
+    "cash_price": "R$ 229,90",
+    "installment_price": "5x de R$ 53,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/perfume-capilar-prof.png",
+    "id": "Produto 03",
+    "title": "Perfume Capilar",
+    "description": "Perfuma os cabelos com elegância, toque sofisticado e sensação de frescor.",
+    "cash_price": "R$ 59,90",
+    "installment_price": "5x de R$ 13,20"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/kit-therapy-prof.png",
+    "id": "Produto 04",
+    "title": "Kit Therapy Home Care",
+    "description": "Cuidado completo para hidratação, nutrição e recuperação dos fios no dia a dia.",
+    "cash_price": "R$ 249,90",
+    "installment_price": "5x de R$ 57,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/maria-marias-bb-cream.png",
+    "id": "Produto 05",
+    "title": "Maria Marias BB Cream 200ml",
+    "description": "Selagem, maciez, proteção térmica e brilho para a rotina profissional.",
+    "cash_price": "R$ 64,90",
+    "installment_price": "5x de R$ 24,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/whey-protein-prof.png",
+    "id": "Produto 06",
+    "title": "Máscara Whey Protein",
+    "description": "Máscara nutritiva para reconstrução, força, hidratação máxima e sedosidade.",
+    "cash_price": "R$ 189,90",
+    "installment_price": "5x de R$ 44,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/reparador-prof.png",
+    "id": "Produto 07",
+    "title": "Reparador",
+    "description": "Finalização com brilho, toque sedoso e controle visual do frizz nas pontas.",
+    "cash_price": "R$ 54,90",
+    "installment_price": "5x de R$ 14,20"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/cauterizacao.png",
+    "id": "Produto 08",
+    "title": "Cauterização",
+    "description": "Sistema profissional em três passos para reconstrução, proteção e brilho.",
+    "cash_price": "R$ 289,90",
+    "installment_price": "5x de R$ 66,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/shampoo-5l.png",
+    "id": "Produto 09",
+    "title": "Shampoo 5L",
+    "description": "Limpeza profissional com ação reparadora, ideal para uso em salão.",
+    "cash_price": "R$ 89,90",
+    "installment_price": "5x de R$ 21,20"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/condicionador-5l.png",
+    "id": "Produto 10",
+    "title": "Condicionador 5L",
+    "description": "Condicionamento reparador com maciez, brilho e proteção para os fios.",
+    "cash_price": "R$ 86,90",
+    "installment_price": "5x de R$ 21,20"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/kit-colageno.png",
+    "id": "Produto 11",
+    "title": "Kit Colágeno",
+    "description": "Reposição intensiva para corpo, elasticidade e brilho com toque premium.",
+    "cash_price": "R$ 159,90",
+    "installment_price": "5x de R$ 38,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/desmaia-fios-prof.png",
+    "id": "Produto 12",
+    "title": "Desmaia Fios",
+    "description": "Maciez intensa, efeito disciplinante e redução de volume para os fios.",
+    "cash_price": "R$ 79,90",
+    "installment_price": "5x de R$ 19,60"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/golden-horse-prof.png",
+    "id": "Produto 13",
+    "title": "Golden Horse",
+    "description": "Nutrição poderosa, força, crescimento e fios revitalizados.",
+    "cash_price": "R$ 79,90",
+    "installment_price": "5x de R$ 19,60"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/terapia-profissional.png",
+    "id": "Produto 14",
+    "title": "Terapia Profissional",
+    "description": "Tratamento intensivo de uso profissional para hidratação, nutrição e recuperação.",
+    "cash_price": "R$ 299,90",
+    "installment_price": "5x de R$ 68,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/fios-de-ouro.png",
+    "id": "Produto 15",
+    "title": "Fios de Ouro",
+    "description": "Kit poderoso para reparar e reconstruir os fios do seu cabelo.",
+    "cash_price": "R$ 169,90",
+    "installment_price": "5x de R$ 41,98"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/plex.png",
+    "id": "Produto 16",
+    "title": "Plex",
+    "description": "Sistema de proteção duradoura para cabelos quimicamente tratados.",
+    "cash_price": "R$ 139,90",
+    "installment_price": "5x de R$ 33,00"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/cachos-deslumbrantes-prof.png",
+    "id": "Produto 17",
+    "title": "Cachos Deslumbrantes",
+    "description": "Kit para definição, hidratação e nutrição poderosa para os seus cachos.",
+    "cash_price": "R$ 219,90",
+    "installment_price": "5x de R$ 50,38"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/kit-nano-keratrix-prof.png",
+    "id": "Produto 18",
+    "title": "Kit Nano Keratrix",
+    "description": "Sistema profissional de cauterização e reconstrução capilar com nanotecnologia.",
+    "cash_price": "R$ 229,90",
+    "installment_price": "5x de R$ 67,98"
+  },
+  {
+    "line": "professional",
+    "image": "assets/products/serum.png",
+    "id": "Produto 19",
+    "title": "Serum 60ml",
+    "description": "Serum extrafino finalizador e doador de brilho tridimensional, perfeito para proteção e selamento das cutículas.",
+    "cash_price": "R$ 109,90",
+    "installment_price": "5x de R$ 26,98"
+  }
+]

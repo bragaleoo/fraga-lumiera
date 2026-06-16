@@ -59,22 +59,38 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterCatalog(filter) {
     productsGrid.style.display = 'grid';
     
-    // Toggle professional OBS note and PDF download button link
+    // Toggle professional OBS note and PDF download buttons styling
     const obsNote = document.querySelector('.professional-obs-note');
-    const downloadBtn = document.getElementById('btn-download-catalog');
-    const downloadText = document.getElementById('download-catalog-text');
+    const btnHomeCare = document.getElementById('btn-download-home-care');
+    const btnProfessional = document.getElementById('btn-download-professional');
     
     if (obsNote) {
       obsNote.style.display = filter === 'professional' ? 'block' : 'none';
     }
     
-    if (downloadBtn && downloadText) {
+    if (btnHomeCare && btnProfessional) {
       if (filter === 'professional') {
-        downloadBtn.href = 'catalogo-profissional.pdf';
-        downloadText.textContent = 'Baixar Catálogo Profissional (PDF)';
+        // Professional active
+        btnProfessional.className = 'btn-primary';
+        btnProfessional.style.background = 'var(--gold-metallic)';
+        btnProfessional.style.color = 'var(--bg-dark)';
+        btnProfessional.style.border = 'none';
+        
+        btnHomeCare.className = 'btn-secondary';
+        btnHomeCare.style.background = 'transparent';
+        btnHomeCare.style.color = 'var(--text-primary)';
+        btnHomeCare.style.border = '1px solid rgba(255, 255, 255, 0.2)';
       } else {
-        downloadBtn.href = 'catalogo-home-care.pdf';
-        downloadText.textContent = 'Baixar Catálogo Home Care (PDF)';
+        // Home Care active
+        btnHomeCare.className = 'btn-primary';
+        btnHomeCare.style.background = 'var(--gold-metallic)';
+        btnHomeCare.style.color = 'var(--bg-dark)';
+        btnHomeCare.style.border = 'none';
+        
+        btnProfessional.className = 'btn-secondary';
+        btnProfessional.style.background = 'transparent';
+        btnProfessional.style.color = 'var(--text-primary)';
+        btnProfessional.style.border = '1px solid rgba(255, 255, 255, 0.2)';
       }
     }
     

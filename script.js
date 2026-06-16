@@ -97,9 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentSlide = 0;
   let activeCatalog = 'home_care'; // home_care or professional
+  let totalPages = 7;
   
-  // Total pages mapping
-  const totalPages = 7;
   if (pagTotal) pagTotal.textContent = totalPages;
 
   // Render initial lookbook state based on active catalog
@@ -138,13 +137,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateLookbookSlides() {
-    slides.forEach((slide, index) => {
-      const img = slide.querySelector('img');
-      if (img) {
-        img.src = `assets/pages/${activeCatalog}_page_${index + 1}.jpg`;
-        img.alt = `Catálogo ${activeCatalog === 'home_care' ? 'Home Care' : 'Profissional'} - Página ${index + 1}`;
+    totalPages = activeCatalog === 'home_care' ? 7 : 11;
+    if (pagTotal) pagTotal.textContent = totalPages;
+
+    if (lookbookSlider) {
+      lookbookSlider.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const slide = document.createElement('div');
+        slide.classList.add('lookbook-slide');
+        
+        const img = document.createElement('img');
+        img.src = `assets/pages/${activeCatalog}_page_${i}.jpg`;
+        img.alt = `Catálogo ${activeCatalog === 'home_care' ? 'Home Care' : 'Profissional'} - Página ${i}`;
+        
+        slide.appendChild(img);
+        lookbookSlider.appendChild(slide);
       }
-    });
+    }
     currentSlide = 0;
     slideLookbook();
   }

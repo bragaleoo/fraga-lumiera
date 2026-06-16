@@ -59,10 +59,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function filterCatalog(filter) {
     productsGrid.style.display = 'grid';
     
-    // Toggle professional OBS note
+    // Toggle professional OBS note and PDF download button link
     const obsNote = document.querySelector('.professional-obs-note');
+    const downloadBtn = document.getElementById('btn-download-catalog');
+    const downloadText = document.getElementById('download-catalog-text');
+    
     if (obsNote) {
       obsNote.style.display = filter === 'professional' ? 'block' : 'none';
+    }
+    
+    if (downloadBtn && downloadText) {
+      if (filter === 'professional') {
+        downloadBtn.href = 'catalogo-profissional.pdf';
+        downloadText.textContent = 'Baixar Catálogo Profissional (PDF)';
+      } else {
+        downloadBtn.href = 'catalogo-home-care.pdf';
+        downloadText.textContent = 'Baixar Catálogo Home Care (PDF)';
+      }
     }
     
     // Filter cards by class

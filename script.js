@@ -123,11 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const pId = card.querySelector('.product-id').textContent;
       const pLine = card.classList.contains('professional-product') ? 'Profissional' : 'Home Care';
       
-      // Extract cash price
+      // Extract cash price (now total price) and installment price
       const pPrice = card.querySelector('.price-value-cash').textContent;
+      const pInstall = card.querySelector('.price-value-install').textContent;
       
       const phoneNum = '5579991389757'; // Brazil (+55) Aracaju (79)
-      const textMsg = `Olá, Fraga Lumiéra! Gostaria de fazer um pedido ou saber mais sobre o produto do catálogo:\n\n*Produto:* ${pName} (${pId})\n*Linha:* ${pLine}\n*Valor:* ${pPrice}\n\nComo posso finalizar a compra?`;
+      const textMsg = `Olá, Fraga Lumiéra! Gostaria de fazer um pedido ou saber mais sobre o produto do catálogo:\n\n*Produto:* ${pName} (${pId})\n*Linha:* ${pLine}\n*Valor:* ${pPrice} (ou ${pInstall})\n\nComo posso finalizar a compra?`;
       const encodedMsg = encodeURIComponent(textMsg);
       
       const waUrl = `https://wa.me/${phoneNum}?text=${encodedMsg}`;

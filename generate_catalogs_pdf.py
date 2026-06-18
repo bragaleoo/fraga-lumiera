@@ -118,13 +118,13 @@ def render_product_card(draw, page_img, prod, x, y, width, is_professional):
     
     # 6. Pricing Layout
     price_y = sep_y + 30
-    # Left price (À VISTA)
-    draw.text((x, price_y), "À VISTA", fill=GOLD_COLOR, font=f_price_lbl)
+    # Left price (VALOR TOTAL)
+    draw.text((x, price_y), "VALOR TOTAL", fill=GOLD_COLOR, font=f_price_lbl)
     draw.text((x, price_y + 50), prod["cash_price"], fill=WHITE_COLOR, font=f_price_val)
     
     # Determine the installment count
     inst_count = 5
-    inst_label = "05X"
+    inst_label = "PARCELADO"
     
     # Right price (05x or 10x installment)
     # Check if we have an installment price
@@ -133,13 +133,7 @@ def render_product_card(draw, page_img, prod, x, y, width, is_professional):
         # Generate installment dynamically if empty or not formatted correctly
         try:
             val = float(prod["cash_price"].replace("R$", "").replace(".", "").replace(",", ".").strip())
-            # Select proper markup
-            if is_professional:
-                inst_val = val * 1.48 if inst_count == 5 else val * 1.14
-            else:
-                inst_val = val * 1.18
-            
-            installment_val = inst_val / inst_count
+            installment_val = val / inst_count
             inst_price = f"{inst_count}x de R$ {installment_val:.2f}".replace(".", ",")
         except Exception:
             inst_price = f"{inst_count}x de R$ --"
@@ -234,7 +228,7 @@ def generate_pdf(line_type, output_pdf_name):
         if is_prof:
             obs_lines.append("* O valor apresentado na Linha Profissional é válido para compras a partir de 2 unidades.")
         
-        obs_lines.append("* Condições: 5% de desconto no Pix • Parcelamento em 3x a partir de R$ 99,00 ou 5x a partir de R$ 199,00.")
+        obs_lines.append("* Condições: *Desconto a vista no PIX até 10% • Parcelamento em 3x a partir de R$ 99,00 ou 5x a partir de R$ 199,00.")
         
         curr_obs_y = 1530 if len(obs_lines) == 2 else 1560
         for obs_line in obs_lines:

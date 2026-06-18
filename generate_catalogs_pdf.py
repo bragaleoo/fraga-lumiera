@@ -228,7 +228,7 @@ def generate_pdf(line_type, output_pdf_name):
         if is_prof:
             obs_lines.append("* O valor apresentado na Linha Profissional é válido para compras a partir de 2 unidades.")
         
-        obs_lines.append("* Condições: *Desconto a vista no PIX até 10% • Parcelamento em 3x a partir de R$ 99,00 ou 5x a partir de R$ 199,00.")
+        obs_lines.append("* Condições: até 10% de desconto à vista no Pix • Parcelamento em 3x a partir de R$ 99,00 ou 5x a partir de R$ 199,00.")
         
         curr_obs_y = 1530 if len(obs_lines) == 2 else 1560
         for obs_line in obs_lines:
